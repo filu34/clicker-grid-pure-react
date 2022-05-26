@@ -1,38 +1,48 @@
+* {
+	box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /*centers items on the line (the x-axis by default)*/
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Grid-Container {
+    display: grid;
+    grid-template-columns: repeat( 10, 1fr );
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Grid-Container > div {
+    margin: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Grid-Container > div:hover {
+    background-color: yellow;
 }
 
-.App-link {
-  color: #61dafb;
+.Grid-Container > div:hover:nth-child(10n-0) {
+    background-color: green;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+    display: grid;
+    grid-template-columns: repeat( 1, 1fr );
+}
+
+.cell {
+    margin: 1px;
+    padding: 10px;
+}
+
+.row > .cell:hover {
+    background-color: red;
+}
+
+.cell .blue {
+    background-color: blue;
 }
